@@ -181,11 +181,11 @@ def r_ply(type_):
                 
             ],
             [
-                InlineKeyboardButton('ρℓαуℓιѕт 📖', 'playlist'),
+                InlineKeyboardButton('Playlist', 'playlist'),
                 
             ],
             [       
-                InlineKeyboardButton("❌ ¢ℓσѕє",'cls')
+                InlineKeyboardButton("❌Close❌",'cls')
             ]        
         ]
     )
@@ -322,7 +322,7 @@ async def m_cb(b, cb):
             ) or (
                 callsmusic.pytgcalls.active_calls[chat_id] == 'playing'
             ):
-                await cb.answer('Chat is not connected or already playng', show_alert=True)
+                await cb.answer('Chat is not connected or already playing', show_alert=True)
         else:
             callsmusic.pytgcalls.resume_stream(chat_id)
             await cb.answer('Music Resumed!')     
@@ -354,11 +354,11 @@ async def m_cb(b, cb):
                 
                 ],
                 [
-                    InlineKeyboardButton('ρℓαуℓιѕт 📖', 'playlist'),
+                    InlineKeyboardButton('Playlist', 'playlist'),
                 
                 ],
                 [       
-                    InlineKeyboardButton("❌ ¢ℓσѕє",'cls')
+                    InlineKeyboardButton("❌Close❌",'cls')
                 ]        
             ]
         )
@@ -399,7 +399,7 @@ async def m_cb(b, cb):
 @Yonebot.on_message(command("play") & other_filters)
 async def play(_, message: Message):
     global que
-    lel = await message.reply("🔄 **Processing**")
+    lel = await message.reply("🔄 **Processing** 🔄")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -419,15 +419,15 @@ async def play(_, message: Message):
                               invitelink = await _.export_chat_invite_link(chid)
                           except:
                               await lel.edit(
-                                  "<b>Add me as admin of yor group first</b>",
+                                  "<b>Add me as admin of your group first</b>",
                               )
                               return
 
                           try:
                               await Yonemusic.join_chat(invitelink)
-                              await Yonemusic.send_message(message.chat.id,"I joined this group for playing music in VC")
+                              await Yonemusic.send_message(message.chat.id,"I joined this group for Playing music in VC")
                               await lel.edit(
-                                  "<b>helper userbot joined your chat</b>",
+                                  "<b>Helper Userbot joined your chat</b>",
                               )
 
                           except UserAlreadyParticipant:
@@ -449,7 +449,7 @@ async def play(_, message: Message):
         return     
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
-    await lel.edit("🔎 **Finding**")
+    await lel.edit("🔎**Finding**🔎")
     sender_id = message.from_user.id
     user_id = message.from_user.id
     sender_name = message.from_user.first_name
@@ -460,7 +460,7 @@ async def play(_, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    await lel.edit("🎵 **Processing**")
+    await lel.edit("**Hang On...Player Starting**")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -484,19 +484,19 @@ async def play(_, message: Message):
             [   
                 [
                                
-                    InlineKeyboardButton('📖 ρℓαуℓιѕт', callback_data='playlist'),
-                    InlineKeyboardButton('мєиυ ⏯ ', callback_data='menu')
+                    InlineKeyboardButton('Playlist', callback_data='playlist'),
+                    InlineKeyboardButton('Menu ', callback_data='menu')
                 
                 ],                     
                 [
                     InlineKeyboardButton(
-                        text="ωαт¢н σи уσυтυвє 🎬",
+                        text="Watch On Youtube",
                         url=f"{url}")
 
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="❌ ¢ℓσѕє",
+                        text="❌Close❌",
                         callback_data='cls')
 
                 ]                             
@@ -516,7 +516,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ Your requested song **queued** at position {position}!",
+        caption=f"Your requested song **Queued** at position {position}!",
         reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -533,7 +533,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="▶️ **Playing** here the song requested by {} via 𝐘𝐨𝐧𝐞 𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭🎶🎸 😜".format(
+        caption=" **Playing** here the song requested by {} via Youtube Music".format(
         message.from_user.mention()
         ),
     )
