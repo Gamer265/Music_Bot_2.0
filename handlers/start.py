@@ -11,19 +11,8 @@ from config import BOT_NAME as bn
 async def start_(client: Yonebot, message: Message):
     await message.reply_text(
         f"""<b>Hey there {format(
-        message.from_user.mention)}![🤓](https://telegra.ph/file/fe77d94e2105721ce4353.jpg)
-        
-I am 𝐘𝐨𝐧𝐞 𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭🎶🎸
-
-I can play songs in your group's VC [🤗](https://telegra.ph/file/fe77d94e2105721ce4353.jpg)
-
-To listen songs add me to your group..
-
-And don't forgot to promote me with all rights![🥰](https://telegra.ph/file/fe77d94e2105721ce4353.jpg)
-
-Otherwise I can't play songs!🥺👉[👈](https://telegra.ph/file/fe77d94e2105721ce4353.jpg)
-
-Use the buttons below to know more about me..😊
+        message.from_user.mention)}!
+        I am Abscissa an Advanced Music bot created by My Master 𝔸 N I Ꮶ E T for playing music in the voice chats of Telegram Groups & Channels.\n\n Send me /help for more info.
  </b>""",
         reply_markup=InlineKeyboardMarkup(
             [ 
@@ -48,12 +37,12 @@ Use the buttons below to know more about me..😊
 
 @Yonebot.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(client: Yonebot, message: Message):
-      await message.reply_text("""**𝐘𝐨𝐧𝐞 𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭🎶🎸 is online**""",
+      await message.reply_text("""**Abscissa Music Bot is Online**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "😎Owner😎", url="https://t.me/H1M4N5HU0P")
+                        "Owner", url="https://t.me/Gamer_4560")
                 ]
             ]
         )
@@ -64,7 +53,16 @@ async def gstart(client: Yonebot, message: Message):
 async def help(client: Yonebot, message: Message):
     await message.reply_text(
         f"""<b>Hey there {format(
-        message.from_user.mention)}! [Click here](https://telegra.ph/commands-06-14-2) to know about my Commands.⚡🔥
+        message.from_user.mention)} **Setting up**
+1) Make bot admin (Group and in channel if use cplay)
+2) Start a voice chat
+3) Try /play [song name] for the first time by an admin
+4) If userbot joined enjoy music, If not add @Abscissa_Userbot to your group and retry
+
+**For Channel Music Play**
+1) Make me admin of your channel 
+2) Send /userbotjoinchannel in linked group
+3) Now send commands in linked group 
         """)
         
 
