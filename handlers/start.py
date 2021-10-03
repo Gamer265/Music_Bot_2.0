@@ -12,13 +12,13 @@ async def start_(client: Yonebot, message: Message):
     await message.reply_text(
         f"""<b>Hey there {format(
         message.from_user.mention)} !
-               I am Abscissa an Advanced Music bot created by My Master 𝔸 N I Ꮶ E T for playing music in the voice chats of Telegram Groups & Channels.\n\n Send me /help for more info.
+        I am Abscissa an Advanced Music bot created by My Master 𝔸 N I Ꮶ E T for playing music in the voice chats of Telegram Groups & Channels.\n\n Send me /help for more info.
  </b>""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "Commands", url="https://telegra.ph/commands-06-14-2")
+                        "Source Code", url="https://github.com/Aniket-Code10010/Music")
                   ],[
                     InlineKeyboardButton(
                         "Owner", url="https://t.me/Gamer_4560"
@@ -76,11 +76,12 @@ Send Me /commands To Know My Features
 async def commands(client: Yonebot, message: Message):
     await message.reply_text(
         f"""<b>Hey there {format(
-        message.from_user.mention)} The Music Bot commands are as follows
+        message.from_user.mention)} 
+The Music Bot commands are as follows
         
         **Commands**
         
-**=>>🎧 Song Playing 🎧**
+**🎧 Song Playing 🎧**
 - /play: Play the requestd song
 - /play [yt url] : Play the given yt url
 - /play [reply yo audio]: Play replied audio
@@ -88,7 +89,7 @@ async def commands(client: Yonebot, message: Message):
 - /splay: Play song via jio saavn
 - /ytplay: Directly play song via Youtube Music
 
-**=>> Playback **
+** Playback **
 
 - /player: Open Settings menu of player
 - /skip: Skips the current track
@@ -98,5 +99,5 @@ async def commands(client: Yonebot, message: Message):
 - /current: Shows the current Playing track
 - /playlist: Shows playlist
 
-*Player cmd and all other cmds except /play, /current  and /playlist  are only for admins of the group.
+Player cmd and all other cmds except /play, /current  and /playlist  are only for admins of the group.
         """)
